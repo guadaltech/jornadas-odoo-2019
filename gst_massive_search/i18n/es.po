@@ -1,0 +1,138 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* gst_massive_search
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-25 11:07+0000\n"
+"PO-Revision-Date: 2019-04-25 11:07+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: gst_massive_search
+#: model:ir.ui.menu,name:gst_massive_search.gst_menu_top_conf
+msgid "Configurations"
+msgstr "Configuraciones"
+
+
+#. module: gst_massive_search
+#: model:ir.ui.menu,name:gst_massive_search.gst_menu_top
+msgid "Massive Search"
+msgstr "Búsqueda Masiva"
+
+#. module: gst_massive_search
+#: model_terms:ir.ui.view,arch_db:gst_massive_search.massive_search_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: gst_massive_search
+#: model:ir.model.fields,field_description:gst_massive_search.field_massive_search__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: gst_massive_search
+#: model:ir.model.fields,field_description:gst_massive_search.field_massive_search__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: gst_massive_search
+#: model:ir.model.fields,field_description:gst_massive_search.field_massive_search__text_search
+msgid "Datas"
+msgstr "Datos"
+
+#. module: gst_massive_search
+#: model:ir.model.fields,field_description:gst_massive_search.field_massive_search__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: gst_massive_search
+#: model:ir.model.fields,field_description:gst_massive_search.field_massive_search__exist_searchable
+msgid "Exist Searchable"
+msgstr "¿Existen campos a buscar?"
+
+#. module: gst_massive_search
+#: model:ir.model,name:gst_massive_search.model_ir_model_fields
+#: model:ir.model.fields,field_description:gst_massive_search.field_massive_search__field_id
+msgid "Fields"
+msgstr "Campo del modelo"
+
+#. module: gst_massive_search
+#: model:ir.model.fields,field_description:gst_massive_search.field_massive_search__id
+msgid "ID"
+msgstr ""
+
+#. module: gst_massive_search
+#: model:ir.model.fields,field_description:gst_massive_search.field_massive_search____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: gst_massive_search
+#: model:ir.model.fields,field_description:gst_massive_search.field_massive_search__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: gst_massive_search
+#: model:ir.model.fields,field_description:gst_massive_search.field_massive_search__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: gst_massive_search
+#: model:ir.actions.act_window,name:gst_massive_search.ir_model_fields_tree_view_mym_massive_search_action
+#: model:ir.actions.act_window,name:gst_massive_search.massive_search_action
+#: model:ir.ui.menu,name:gst_massive_search.menu_massive_search
+msgid "Massive Search"
+msgstr "Búsqueda masiva"
+
+#. module: gst_massive_search
+#: model:ir.ui.menu,name:gst_massive_search.menu_configuration_planning_field_massive_search
+msgid "Massive Search Editions"
+msgstr "Seleccionar Campos para Búsqueda Masiva"
+
+#. module: gst_massive_search
+#: model:ir.model.fields,field_description:gst_massive_search.field_massive_search__model_id
+#: model_terms:ir.ui.view,arch_db:gst_massive_search.ir_model_fields_search_view_mym_massive_search
+msgid "Model"
+msgstr "Modelo"
+
+#. module: gst_massive_search
+#: model_terms:ir.ui.view,arch_db:gst_massive_search.ir_model_fields_search_view_mym_massive_search
+msgid "Not searchable"
+msgstr "No puede buscarse"
+
+#. module: gst_massive_search
+#: model_terms:ir.ui.view,arch_db:gst_massive_search.massive_search_form
+msgid "OR"
+msgstr "O"
+
+#. module: gst_massive_search
+#: model_terms:ir.ui.view,arch_db:gst_massive_search.massive_search_form
+msgid "Search"
+msgstr "Buscar"
+
+#. module: gst_massive_search
+#: model_terms:ir.ui.view,arch_db:gst_massive_search.massive_search_form
+msgid "Search Parameters"
+msgstr "Parámetros de búsqueda"
+
+#. module: gst_massive_search
+#: model:ir.model.fields,help:gst_massive_search.field_massive_search__text_search
+msgid "Search data separate by return"
+msgstr "Separar datos por un enter"
+
+#. module: gst_massive_search
+#: model:ir.model.fields,field_description:gst_massive_search.field_ir_model_fields__is_massive_searchable
+#: model_terms:ir.ui.view,arch_db:gst_massive_search.ir_model_fields_search_view_mym_massive_search
+msgid "Searchable"
+msgstr "Puede ser Buscado"
+
+#. module: gst_massive_search
+#: model:ir.model,name:gst_massive_search.model_massive_search
+msgid "massive.search"
+msgstr ""
+

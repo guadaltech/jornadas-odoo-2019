@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="massive_search_form">
+            <field name="name">massive.search.form</field>
+            <field name="model">massive.search</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="Search Parameters">
+                            <field name="model_id" required="1"
+                                   widget="selection"/>
+                            <field name="exist_searchable" invisible="1"/>
+                            <field name="field_id"
+                                   domain="[('model_id', '=', model_id), ('is_massive_searchable', '=', True)]"
+                                   required="1" widget="selection"
+                                   attrs="{'readonly': [('exist_searchable', '=', False)]}"/>
+                        </group>
+                        <group>
+                            <field name="text_search"
+                                   attrs="{'readonly': [('exist_searchable', '=', False)]}"/>
+                        </group>
+                        <footer>
+                            <button name="op_search" type="object"
+                                    string="Search" class="oe_highlight"
+                                    attrs="{'invisible': [('exist_searchable', '=', False)]}"/>
+                            OR
+                            <button string="Cancel" class="btn-secondary" special="cancel" />
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="massive_search_action" model="ir.actions.act_window">
+            <field name="name">Massive Search</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">massive.search</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>
