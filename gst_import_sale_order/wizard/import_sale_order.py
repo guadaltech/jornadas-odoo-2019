@@ -72,6 +72,7 @@ class ImportSaleOrder(models.TransientModel):
         created_sale_count = 0
         currency_ids = self.env['res.currency'].search([])
         reference = ''
+        sale_new = False
         for wb in wb_list:
             sheet = 0
             for s in wb.sheets():
@@ -81,7 +82,6 @@ class ImportSaleOrder(models.TransientModel):
                     try:
                         if row != 0:
                             partner= []
-                            sale_new = False
                             nif_partner = number2string(s.cell(row, conf_columns.index('partner')))
                             if len(partner) <= 0 and 'partner' in conf_columns:
                                 dom_search = [('vat', '=', nif_partner),('customer', '=', True), ('parent_id', '=', False)]
@@ -104,12 +104,12 @@ class ImportSaleOrder(models.TransientModel):
                                 break
                             vals = {'partner_id': partner[0].id,
                                     }
-                            if not sale_new:
-                                sale_doc = False
-                                if 'referencia' in conf_columns:
-                                    sale_doc = number2string(s.cell(row, conf_columns.index('referencia')))
-                                vals.update({
-                                             'client_order_ref': sale_doc})
+
+                            sale_doc = False
+                            if 'referencia' in conf_columns:
+                                sale_doc = number2string(s.cell(row, conf_columns.index('referencia')))
+                            vals.update({
+                                         'client_order_ref': sale_doc})
                             if 'fecha_pedido' in conf_columns:
                                 idateorder = conf_columns.index('fecha_pedido')
                                 date_order = datetime.now()
@@ -150,10 +150,11 @@ class ImportSaleOrder(models.TransientModel):
                             if reference != sale_doc:
                                 sale_new = sale_obj.create(vals)
                                 reference = sale_doc
+                                created_sale_count += 1
                             sale_new.onchange_partner_id()
                             vals_line.update({'order_id': sale_new.id})
                             sale_line_obj.create(vals_line)
-                            created_sale_count += 1
+
                     except Exception as e:
                         self.log += "In the sheet: " + str(sheet) + " row: " + str(row_) + \
                                     "#" + "Error in created order process. In the log all info. \n"
