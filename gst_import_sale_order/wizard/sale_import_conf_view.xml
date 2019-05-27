@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record id="sale_import_conf_form_view" model="ir.ui.view">
+            <field name="name">sale.import.con.form.view.sale.study</field>
+            <field name="model">sale.import.conf</field>
+            <field name="arch" type="xml">
+                <form string="Template to import Sale Orders">
+                    <group >
+                        <field name="name"/>
+                    </group>
+                    <group string="Columns Configuration">
+                        <field name="columns_ids">
+                            <tree string="Columns Configuration" editable="bottom">
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="sale_import_conf_form_action" model="ir.actions.act_window">
+            <field name="name">Templates to load Sale Orders</field>
+            <field name="res_model">sale.import.conf</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

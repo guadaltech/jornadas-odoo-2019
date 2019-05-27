@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <menuitem id="menu_sale_import_conf" name="Templates to load Sale Orders"
+                  parent="sale.menu_sales_config" sequence="2"
+                  action="sale_import_conf_form_action"/>
+
+        <menuitem action="gst_import_sale_order_action" id="submenu_import_sale_order"
+                  parent="sale.sale_order_menu"
+                  sequence="1"/>
+
+    </data>
+</odoo>

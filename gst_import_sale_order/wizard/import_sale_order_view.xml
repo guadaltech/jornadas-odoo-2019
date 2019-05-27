@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="gst_import_sale_order_form_view" model="ir.ui.view">
+        <field name="name">gst.mym.import.sale.order.form.view</field>
+        <field name="model">import.sale.order</field>
+        <field name="arch" type="xml">
+            <form string="Import Sale Order">
+                    <header>
+                        <button type="object" string="Import Sale Order"
+                                class="oe_highlight" name="read_and_import_sale_order"/>
+                    </header>
+                    <group cols="4">
+                        <group>
+                            <field name="sale_import_conf_id"/>
+                            <field name="file"/>
+                            <field name="description" />
+                            <field name="log" readonly="True"/>
+                        </group>
+                    </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="gst_import_sale_order_action" model="ir.actions.act_window">
+        <field name="name">Import Sale Order</field>
+        <field name="res_model">import.sale.order</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field eval="gst_import_sale_order_form_view" name="view_id"/>
+    </record>
+
+</odoo>
