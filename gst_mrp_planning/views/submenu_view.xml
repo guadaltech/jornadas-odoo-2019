@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem
+                id="submenu_a_c"
+                name="Customer service"
+                sequence="1"/>
+
+        <record id="action_open_op_massive_search_orders" model="ir.actions.server">
+            <field name="name">Open massive search of Orders</field>
+            <field name="model_id" ref="gst_massive_search.model_massive_search"/>
+            <field name="binding_model_id" ref="gst_massive_search.model_massive_search"/>
+            <field name="state">code</field>
+            <field name="code">action = model.action_open_op_masive_search_orders()</field>
+        </record>
+
+        <menuitem id="menu_massive_search_orders"
+                  name="Orders"
+                  action="action_open_op_massive_search_orders"
+                  parent="submenu_a_c"
+                   sequence="2"/>
+
+        <record id="action_open_op_massive_search_deliveries" model="ir.actions.server">
+            <field name="name">Open massive search of Deliveries</field>
+            <field name="model_id" ref="gst_massive_search.model_massive_search"/>
+            <field name="binding_model_id" ref="gst_massive_search.model_massive_search"/>
+            <field name="state">code</field>
+            <field name="code">action = model.action_open_op_massive_search_deliveries()</field>
+        </record>
+
+        <menuitem id="menu_massive_search_delivery"
+                  name="Delivery"
+                  action="action_open_op_massive_search_deliveries"
+                  parent="gst_mrp_planning.submenu_a_c"
+                   sequence="3"/>
+
+        <record id="action_open_op_massive_search_dispatches" model="ir.actions.server">
+            <field name="name">Open massive search of Dispatches</field>
+            <field name="model_id" ref="gst_massive_search.model_massive_search"/>
+            <field name="binding_model_id" ref="gst_massive_search.model_massive_search"/>
+            <field name="state">code</field>
+            <field name="code">action = model.action_open_op_massive_search_dispatches()</field>
+        </record>
+
+        <menuitem id="menu_op_massive_search_dispatches"
+                  name="Dispatches"
+                  action="action_open_op_massive_search_dispatches"
+                  parent="gst_mrp_planning.submenu_a_c"
+                   sequence="4"/>
+
+        <record id="action_open_op_massive_search_warehouse" model="ir.actions.server">
+            <field name="name">Open massive search of Warehouse</field>
+            <field name="model_id" ref="gst_massive_search.model_massive_search"/>
+            <field name="binding_model_id" ref="gst_massive_search.model_massive_search"/>
+            <field name="state">code</field>
+            <field name="code">action = model.action_open_op_massive_search_warehouse()</field>
+        </record>
+
+        <menuitem id="menu_op_massive_search_warehouse"
+                  name="Warehouse"
+                  action="action_open_op_massive_search_warehouse"
+                  parent="gst_mrp_planning.submenu_a_c"
+                   sequence="5"/>
+
+    </data>
+</odoo>

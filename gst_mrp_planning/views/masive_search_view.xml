@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="massive_search_form_inherit">
+            <field name="name">massive.search.form.inherit</field>
+            <field name="model">massive.search</field>
+            <field name="inherit_id" ref="gst_massive_search.massive_search_form"/>
+            <field name="arch" type="xml">
+                <field name="model_id" position="attributes">
+                    <attribute name="readonly">context.get('default_customize', False)</attribute>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
