@@ -1,0 +1,35 @@
+<odoo>
+    <record id="ir_actions_report_xml_form_view_inherit_jasper_server_integration" model="ir.ui.view">
+        <field name="name">ir.actions.report.xml.form.view.inherit.jasper.server.integration</field>
+        <field name="model">ir.actions.report.xml</field>
+        <field name="inherit_id" ref="base.act_report_xml_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='multi']" position="after">
+                <field name="is_jasper_report" attrs="{'invisible': [('report_type', '!=', 'qweb-pdf')]}" />
+            </xpath>
+            <xpath expr="//field[@name='report_name']" position="attributes">
+                <attribute name="attrs">{ 'invisible': [('is_jasper_report', '=', True)], 'required': [('is_jasper_report', '=', False)] }</attribute>
+            </xpath>
+            <xpath expr="//page[last()]" position="after">
+                <page string="Jasper Server Settings" attrs="{ 'invisible': [('is_jasper_report', '=', False)] }">
+                    <group>
+                        <field name="report_full_path" placeholder="reports/..." value="reports/" attrs="{ 'required': [('is_jasper_report', '=', True)] }"/>
+                        <field name="parameters_ids" />
+                    </group>
+                </page>
+            </xpath>
+
+            <xpath expr="//field[@name='paperformat_id']" position="attributes">
+                <attribute name="attrs">{'invisible':['|', ('report_type','not in',['qweb-pdf']), ('is_jasper_report', '=', True)]}</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='attachment_use']" position="attributes">
+                <attribute name="attrs">{'invisible': [('is_jasper_report', '=', True)]}</attribute>
+            </xpath>
+
+            <xpath expr="//button[@name='associated_view']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', ('report_type', 'not in', ['qweb-pdf', 'qweb-html']), ('is_jasper_report', '=', True)]} </attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
