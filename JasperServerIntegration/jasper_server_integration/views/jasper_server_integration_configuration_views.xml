@@ -1,0 +1,35 @@
+<odoo>
+    <record id="jasper_server_integration_configuration_form_view" model="ir.ui.view">
+        <field name="name">jasper.server.integration.configuration.form.view</field>
+        <field name="model">jasper.server.integration.configuration</field>
+        <field name="arch" type="xml">
+            <form no_create_edit="1">
+                <sheet cols="2">
+                    <group>
+                        <field name="jasper_server_address" placeholder="http://&lt;host&gt;:&lt;port&gt;/jasperserver[-pro]/" required="1" />
+                        <field name="jasper_server_username" required="1" />
+                        <field name="jasper_server_password" required="1" password="True" />
+                        <field name="jasper_server_timeout" required="1" />
+                    </group>
+                </sheet>
+
+                <footer>
+                    <button name="write" class="btn-primary" string="Save" type="object" />
+                    <button special="cancel" string="Cancel" class="btn-default" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_menu_jasper_server_integration_configuration" model="ir.actions.act_window">
+        <field name="name">Configuration of Jasper Server integration</field>
+        <field name="res_model">jasper.server.integration.configuration</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="jasper_server_integration_configuration_form_view"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem action="action_menu_jasper_server_integration_configuration" parent="report.reporting_menuitem"
+              name="Jasper Server Configuration" sequence="500"
+              id="menu_jasper_server_integration_configuration" />
+</odoo>
